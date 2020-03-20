@@ -21,8 +21,18 @@ function draw() {
     context.closePath();
     context.fill();
     // Boundary Logic
-    if (x < 0 || x > window.innerWidth) dx = -dx;
-    if (y < 0 || y > window.innerHeight) dy = -dy;
+    if (x < 0 || x > window.innerWidth) {
+        dx = -dx;
+    }
+    if (y < 0 || y > window.innerHeight) {
+        dy = -dy;
+    }
+    if (x > window.innerWidth) {
+        x = window.innerWidth;
+    }
+    if (y > window.innerHeight) {
+        y = window.innerHeight;
+    }
     x += dx;
     y += dy;
 }
