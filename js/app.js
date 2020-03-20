@@ -1,16 +1,18 @@
 var context;
-var x = Math.floor(Math.random() * 500); //random original position of ball
-var y = Math.floor(Math.random() * 500); //random original position of ball
+var x = Math.floor(Math.random() * 2500) + 1; //random original position of ball
+var y = Math.floor(Math.random() * 2500) + 1; //random original position of ball
 var dx = 5; //stepping increases x
 var dy = 5; //stepping increases y
 var ballSpeed = 10;
 var speedSet;
+var randomBall;
 
 function init() {
     let canvas = document.getElementById("myCanvas");
     canvas.width = window.innerWidth - 5;
     canvas.height = window.innerHeight - 5;
     context = canvas.getContext("2d");
+    randomBall = Math.floor(Math.random() * 100) + 20;
     speedSet = setInterval(draw, ballSpeed);
 }
 
@@ -22,7 +24,7 @@ function draw() {
     // use fillStyle set the color
     context.fillStyle = "#0000ff";
     // Draws a circle of radius 20 at the coordinates 100,100 on the canvas
-    context.arc(x, y, 20, 0, Math.PI * 2, true);
+    context.arc(x, y, randomBall, 0, Math.PI * 2, true);
     //The closePath() method creates a path from the current point back to the starting point.
     context.closePath();
     //The fill() method fills the current drawing (path)
