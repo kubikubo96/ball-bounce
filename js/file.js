@@ -1,6 +1,6 @@
 var context;
-var x = 100; //original position of ball
-var y = 200; //original position of ball
+var x = Math.floor(Math.random() * 500); //random original position of ball
+var y = Math.floor(Math.random() * 500); //random original position of ball
 var dx = 5; //stepping increases x
 var dy = 5; //stepping increases y
 var ballSpeed = 10;
@@ -49,6 +49,7 @@ $(document).ready(function () {
     $(document).keydown(function (keyCode) {
         if (keyCode.which === 38) {
             ballSpeed = ballSpeed - 10;
+            //clearInterval() method clears a timer set with the setInterval() method
             clearInterval(speedSet);
             speedSet = setInterval(draw, ballSpeed);
         }
