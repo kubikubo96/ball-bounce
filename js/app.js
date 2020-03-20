@@ -1,8 +1,8 @@
 var context;
 var x = Math.floor(Math.random() * 2500) + 1; //random original position of ball
 var y = Math.floor(Math.random() * 2500) + 1; //random original position of ball
-var dx = 5; //stepping increases x
-var dy = 5; //stepping increases y
+var dx = Math.floor(Math.random() * 10) + 1; //stepping increases x
+var dy = Math.floor(Math.random() * 10) + 1;
 var ballSpeed = 10;
 var speedSet;
 var canvas;
