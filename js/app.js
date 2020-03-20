@@ -6,9 +6,10 @@ var dy = 5; //stepping increases y
 var ballSpeed = 10;
 var speedSet;
 var ballSize;
+var canvas;
 
 function init() {
-    let canvas = document.getElementById("myCanvas");
+    canvas = document.getElementById("myCanvas");
     canvas.width = window.innerWidth - 5;
     canvas.height = window.innerHeight - 5;
     context = canvas.getContext("2d");
@@ -36,12 +37,19 @@ function draw() {
     if (y < 0 || y > window.innerHeight) {
         dy = -dy;
     }
+
     if (x > window.innerWidth) {
         x = window.innerWidth;
     }
     if (y > window.innerHeight) {
         y = window.innerHeight;
     }
+
+    $(window).resize(function () {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
+
     x += dx;
     y += dy;
 }
