@@ -45,14 +45,15 @@ function draw() {
         y = window.innerHeight;
     }
 
-    $(window).resize(function () {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    });
-
     x += dx;
     y += dy;
 }
+
+// set width, height canvas when change resize
+$(window).resize(function () {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
 
 // handle speed up or down of ball
 $(document).ready(function () {
