@@ -3,13 +3,30 @@ var x = 100;
 var y = 200;
 var dx = 5;
 var dy = 5;
+var speedBall = 10;
+var myVar;
+
+$(document).ready(function () {
+    $(document).keydown(function (keyCode) {
+        if (keyCode.which === 38) {
+            speedBall = speedBall - 10;
+            clearInterval(myVar);
+            init();
+        }
+        if (keyCode.which === 40) {
+            speedBall = speedBall + 10;
+            clearInterval(myVar);
+            init();
+        }
+    })
+});
 
 function init() {
     let canvas = document.getElementById("myCanvas");
     canvas.width = window.innerWidth - 5;
     canvas.height = window.innerHeight - 5;
     context = canvas.getContext("2d");
-    setInterval(draw, 10);
+    myVar = setInterval(draw, speedBall);
 }
 
 function draw() {
